@@ -1,0 +1,222 @@
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+/* Navigation */
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav .logo {
+  display: inline-flex;
+  position: absolute;
+  left: 9rem;
+}
+
+nav .logo .titles {
+  text-align: center;
+}
+
+nav .logo .title {
+  font: 400 16px "Avenir-regular";
+  color: #bbb;
+  -webkit-font-smoothing: auto;
+}
+
+nav .logo .subtitle {
+  font-size: 10px;
+  color: #0e0e0e30;
+}
+
+nav .logo p span {
+  font-family: "Avenir-bold";
+  animation: changeBackgroundColor 12s infinite;
+}
+
+/*** create balls ***/
+.element{
+  width: 21.2rem;
+  height: 21.2rem;
+
+  position: fixed;
+}
+
+.element.puppet{
+  background-image: url(../assets/ELEMENTOS/BONECO\ 1.png);
+  background-repeat: no-repeat;
+  top: 8rem;
+  left: 9rem;
+}
+
+.element.painting{
+  background-image: url(../assets/ELEMENTOS/PINTURA.png), url(../assets/ELEMENTOS/ESTRELA.png);
+  background-repeat: no-repeat;
+  bottom: -6rem;
+  left: 2rem;
+}
+
+.element.star{
+  background-image: url(../assets/ELEMENTOS/ESTRELA.png);
+  background-repeat: no-repeat;
+    bottom: 10rem;
+    left: 16rem;
+}
+
+.element.star2{
+  background-image: url(../assets/ELEMENTOS/ESTRELA.png);
+  background-repeat: no-repeat;
+  top: 5rem;
+  left: 3rem;
+}
+
+/* Teacher */
+#teacher {
+  background: #eeeeee;
+}
+
+.teacher .grid {
+  gap: 1.5rem;
+}
+
+.teacher {
+  padding: 3.625rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.teacher img {
+  width: 13rem;
+  height: 13rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.teacher h2 {
+  font: 27px "Avenir-bold";
+}
+.teacher .title {
+  font: 15px "Avenir-bold";
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.733);
+}
+
+footer .brand p {
+  text-align: center;
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+footer .brand img {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 13rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+footer .social a {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header {
+    margin-bottom: 0;
+  }
+
+  .element.puppet{
+    top: 8rem;
+    left: 78rem;  
+  }
+  
+  .element.painting{
+    bottom: -6rem;
+    left: 2rem;
+  }
+  
+  .element.star{
+      bottom: 10rem;
+      left: 16rem;
+  }
+  
+  .element.star2{
+    top: 5rem;
+    left: 3rem;
+  }
+  /* Navigation */
+  nav .logo {
+    position: initial;
+  }
+
+  nav .logo .title {
+    font-size: 20px;
+  }
+
+  #teacher .header {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .teachers {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .teachers {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  /* Footer */
+  footer .section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+
+  footer .brand p a {
+    color: rgba(0, 0, 0, 0.336);
+  }
+}

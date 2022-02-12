@@ -1,0 +1,684 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font: 700 var(--title-font-size) "Avenir-bold";
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.button {
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem "Avenir-bold";
+  transition: background 0.3s;
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 8%, 80%) 0%,
+    rgba(136, 134, 135, 0.14) 100%
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    rgba(136, 134, 135, 0.14) 0%,
+    hsla(var(--hue), 8%, 80%) 100%
+  );
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+/* Navigation */
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav .logo {
+  display: inline-flex;
+  position: absolute;
+  left: 8rem;
+}
+
+nav .logo .titles {
+  text-align: center;
+}
+
+nav .logo .title {
+  font: 400 16px "Avenir-regular";
+  color: #bbb;
+  -webkit-font-smoothing: auto;
+}
+
+nav .logo .subtitle {
+  font-size: 10px;
+  color: #0e0e0e30;
+}
+
+nav .logo p span {
+  font-family: "Avenir-bold";
+  animation: changeBackgroundColor 12s infinite;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #e6bdd9;
+}
+
+nav ul li a::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: #e6bdd9;
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* Quando mostrar o menu */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/* Toggle menu // Interrupitor */
+.toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+  transition: 0.2s;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+/* Home */
+#home {
+  background: #eeeeee;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+}
+
+#home .phrase {
+  top: 5rem;
+  margin: 0 1rem;
+}
+
+/* About */
+#about {
+  background: #ffff;
+  padding-top: 2rem;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#about .buttons {
+  position: absolute;
+  right: 2rem;
+
+  background-color: #b58bc7;
+  height: 2.8rem;
+  margin-top: 4.2rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  font: 500 1rem "Avenir-bold";
+
+  transition: filter 0.5s;
+}
+
+#about .buttons:hover {
+  filter: brightness(0.9);
+}
+
+#about .buttons a {
+  color: var(--text-color-light);
+}
+
+/* SERVICES */
+.services {
+  background: #eeeeee;
+}
+
+.cards .grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgb(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid rgba(46, 45, 45, 0.144);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card p {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  padding: 7rem 2rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.card img {
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  width: 150px;
+  justify-content: center;
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+#services .buttons {
+  background-color: #b58bc7;
+  height: 3.8rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  font: 500 1rem "Avenir-bold";
+  transition: filter 0.3s;
+  cursor: pointer;
+}
+
+#services .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#services .buttons:hover {
+  filter: brightness(0.9);
+}
+
+#services .buttons a {
+  text-align: center;
+  color: var(--text-color-light);
+}
+
+/* Teacher */
+#teacher {
+  background: #cbdcdc85;
+}
+
+#teacher .container {
+  margin: 0;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+#teacher .title .title {
+  font: 20px "Avenir-bold";
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+#teacher .title p {
+  font-family: "Avenir-bold";
+}
+
+#teacher .button {
+  margin-top: 2rem;
+  background-color: #b58bc7;
+  height: 2.8rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  border-style: hidden;
+  font: 500 1rem "Avenir-bold";
+  transition: filter 0.3s;
+  cursor: pointer;
+}
+
+#teacher .button:hover {
+  filter: brightness(0.9);
+}
+
+#teacher .button a {
+  color: #ffff;
+}
+
+#teacher .image {
+  position: relative;
+  width: 22rem;
+}
+
+#teacher .image img {
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  position: relative;
+}
+
+/* Testimonials */
+#testimonials {
+  background: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#testimonials header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+  margin: 2rem;
+  touch-action: pan-y;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+
+  position: absolute;
+  top: -0.375rem;
+  left: -1.875rem;
+  color: var(--pink);
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5rem;
+}
+
+/* Swiper */
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--pink);
+}
+
+/* Contact */
+#contact {
+  background: #e4808017;
+}
+
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+
+#contact .button {
+  font-size: 1.7rem;
+  margin-right: 0.625rem;
+  align-items: center;
+  background-color: #b58bc7;
+  color: rgb(245, 243, 243);
+  transition: filter 0.3s;
+}
+#contact .button:hover {
+  filter: brightness(0.9);
+}
+
+#contact .maps {
+  box-shadow: 0px 0px 30px rgba(0 0 0 /30%);
+  border-radius: 0.45rem;
+
+  width: 350px;
+  height: 350px;
+}
+
+#contact .maps iframe {
+  border-radius: 0.45rem;
+  width: 350px;
+  height: 350px;
+}
+
+#contact .maps .image img {
+  width: 5rem;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.733);
+}
+
+footer .brand p {
+  text-align: center;
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 13rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+footer .social a {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+footer .brand p a {
+  color: rgba(0, 0, 0, 0.336);
+
+}
+
+/* Responsivo */
+/* Extra large devices: 1200> */
+@media (min-width: 1200px) {
+  /* Reusable classes */
+  .container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  /* Navigation */
+  nav .logo {
+    position: initial;
+  }
+
+  nav .logo .title {
+    font-size: 20px;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem Avenir-regular;
+  }
+
+  nav .logo .titles {
+    margin: 0;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* Layout */
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /* Home */
+  #home .container{
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #home .image {
+    max-width: 100%;
+    width: 50rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  #home .phrase {
+    width: 50rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* About */
+  #about .container {
+    padding-top: 9.5rem;
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  #about .video {
+    width: 560px;
+  }
+  /* Services */
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* Teacher */
+  #teacher .container {
+    grid-auto-flow: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #teacher .image {
+    position: relative;
+    width: 35rem;
+  }
+
+  /* Testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  #contact .maps {
+    border-radius: 0.45rem;
+    width: 600px;
+    height: 400px;
+  }
+
+  #contact .maps iframe {
+    width: 600px;
+    height: 400px;
+  }
+
+  /* Footer */
+  footer .section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+/* large devices: 1023> */
+/* large devices: 992> */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+/* large devices: 767 > */
